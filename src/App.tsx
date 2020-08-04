@@ -1,25 +1,24 @@
 import React from 'react';
-import { PageHeader } from './components/Header';
-import './App.css';
+import { NavBar } from './components/NavBar';
+// import { makeStyles } from '@material-ui/core';
+import { BodyWrapper } from './components/BodyWrapper';
+
+/* color scheme 
+  primary: #27EE02
+  secondary: #00C700
+  TextDescription: theme.palette.text.secondary
+  TextHeader: theme.palette.text.primary
+*/
+// const useStyles = makeStyles({
+  
+// })
 
 function App() {
+  // const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <PageHeader />
-        <h1>Practice HSK</h1>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="wrapper">
+      <NavBar id="header"/>
+      <BodyWrapper id="body-wrapper" />
     </div>
   );
 }
