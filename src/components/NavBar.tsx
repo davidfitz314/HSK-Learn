@@ -43,7 +43,7 @@ export const NavBar = (props: NavBarProps) => {
     return (
         <div id={props.id}>
             <h1 className={classes.title}>HSK Practice</h1>
-            <div className={classes.description}>Get yourself ready for your HSK's Level Exam by practicing with flashcards.</div>
+            <div className={classes.description}>Get yourself ready for your HSK Exam by practicing with flashcards.</div>
             <div className={classes.navBar}>
                 <hr className={classes.line} />
                 <Grid container className={classes.navBar} justify="space-around">
