@@ -21,11 +21,14 @@ export const BodyWrapper = (props: bodyWrapperProps) => {
     return (
         <div id={props.id} className={classes.padding}>
             <h3>HSK Level {props.currentLevel}</h3>
-            <Grid container>
-                {level1 && level1.map((subject, key) => {
+            <Grid container alignContent='space-between' justify='space-evenly'>
+                {props.currentLevel === 1 && level1 && level1.map((subject, key) => {
                     return (
-                        <Grid item xs={3} key={key}>
-                            {subject.type}
+                        <Grid item xs={4} key={key}>
+                            <strong><u><i>{subject.type}</i></u></strong>
+                            <ul>
+                            {subject.items && subject.items.map((item) => <li>{`${item.chinese} ${item.pinyin} ${item.english}`}</li>)}
+                            </ul>
                         </Grid>
                     )
                 })}
