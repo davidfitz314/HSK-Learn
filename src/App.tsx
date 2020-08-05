@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState } from 'react';
 import { NavBar } from './components/NavBar';
 // import { makeStyles } from '@material-ui/core';
 import { BodyWrapper } from './components/BodyWrapper';
@@ -15,10 +15,11 @@ import { BodyWrapper } from './components/BodyWrapper';
 
 function App() {
   // const classes = useStyles();
+  const [level, setLevel] = useState(1);
   return (
     <div id="wrapper">
-      <NavBar id="header"/>
-      <BodyWrapper id="body-wrapper" />
+      <NavBar id="header" setPage={setLevel} />
+      <BodyWrapper id="body-wrapper" currentLevel={level}/>
     </div>
   );
 }

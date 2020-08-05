@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
@@ -8,13 +8,15 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         margin: 0,
         borderRadius: '5px',
+        padding: '0 5px',
+        textAlign: 'center',
     },
     paper: {
-        padding: theme.spacing(1),
-        textAlign: 'center',
+        padding: `${theme.spacing(1)}px ${theme.spacing(8)}px `,
+        
         backgroundColor: '#d3E145',
         color: theme.palette.text.secondary,
-        margin: theme.spacing(.5),
+        margin: theme.spacing(0),
     },
     line: {
         border: '1px solid #aeb301',
@@ -36,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 
 type NavBarProps = {
     id: string,
+    setPage: (num: number) => void,
 }
 
 export const NavBar = (props: NavBarProps) => {
@@ -46,24 +49,24 @@ export const NavBar = (props: NavBarProps) => {
             <div className={classes.description}>Get yourself ready for your HSK Exam by practicing with flashcards.</div>
             <div className={classes.navBar}>
                 <hr className={classes.line} />
-                <Grid container className={classes.navBar} justify="space-around">
+                <Grid container className={classes.navBar} justify='center'>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 1</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(1)}>Level 1</Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 2</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(2)}>Level 2</Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 3</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(3)}>Level 3</Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 4</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(4)}>Level 4</Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 5</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(5)}>Level 5</Button>
                     </Grid>
                     <Grid item xs={2}>
-                        <Paper className={classes.paper}>Level 6</Paper>
+                        <Button className={classes.paper} onClick={() => props.setPage(6)}>Level 6</Button>
                     </Grid>
                 </Grid>
                 <hr className={classes.line} style={{ marginBottom: 0 }} />

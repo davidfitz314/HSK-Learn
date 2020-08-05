@@ -1,0 +1,132 @@
+[
+    {   
+        "type" : "Personal pron",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Demonstrative Pron",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Interrogative Pron",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Numberal",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Quantifier",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Adverb",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Conjunction",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Preposition",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Auxiliary",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Interjection",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Noun",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Verb",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Adjective",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    }
+]
