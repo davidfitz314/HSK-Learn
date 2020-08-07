@@ -18,10 +18,3 @@ body {
     padding: 25px 0 0 0;
     clear: both;
 }
-
-#body-wrapper {
-    margin: 0 auto;
-    max-width: 940px;
-    background-color: #f0f4bf;
-    text-align: center;
-}
