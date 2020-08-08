@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import { Card } from './Card';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -17,6 +18,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         marginLeft: theme.spacing(2),
         flex: 1,
     },
+    gridSpacing: {
+        margin: theme.spacing(2),
+        backgroundColor: 'yellow',
+        textAlign: 'center',
+    }
 }));
 
 interface languageGroups {
@@ -38,7 +44,7 @@ type cardProps = {
 
 export const CardDisplay = (props: cardProps) => {
     const classes = useStyles();
-    console.log(props.cardObj);
+    // TODO: change arrow to be a back button, move category to center, add select statement to right for limiting number of cards
     return (
         <div>
             <Dialog fullScreen open={props.open} onClose={props.handleClose}>
@@ -56,18 +62,14 @@ export const CardDisplay = (props: cardProps) => {
                         </Grid>
                     </Grid>
                 </AppBar>
-                <Grid container>
+                <Grid container alignItems='center' justify='center'>
                     {props.cardObj.items && props.cardObj.items.map((item, key) => {
                         return (
-                            <Grid item xs={2}>
-                                <ul>
-                                    <li key={`${key}-1`}>{item.chinese}</li>
-                                    <li key={`${key}-2`}>{item.pinyin}</li>
-                                    <li key={`${key}-3`}>{item.english}</li>
-                                </ul>
-                            </Grid>
-                        );
-                    })}
+                                <Grid key={key} item xs={3} className={classes.gridSpacing}>
+                                    <Card card={item} key={key} />
+                                </Grid>
+                            );
+                        })}
                 </Grid>
             </Dialog>
         </div>
