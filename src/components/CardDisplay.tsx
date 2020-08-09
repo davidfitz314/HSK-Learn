@@ -1,12 +1,16 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import CloseIcon from '@material-ui/icons/Close';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import IconButton from '@material-ui/core/IconButton';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Card } from './Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { cardGroups } from './Utils/Types';
+import { CardPageNavigation } from './CardPageNavigation';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
@@ -20,57 +24,96 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     gridSpacing: {
         margin: theme.spacing(2),
-        backgroundColor: 'yellow',
+    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 80,
+        color: 'white',
+        textColor: 'white',
+    },
+    selectEmpty: {
+        color: 'white',
+        textColor: 'white',
         textAlign: 'center',
-    }
+    },
 }));
-
-interface languageGroups {
-    chinese: string;
-    pinyin: string;
-    english: string;
-}
-
-type cardGroups = {
-    type: string,
-    items: languageGroups[],
-}
 
 type cardProps = {
     cardObj: cardGroups,
     open: boolean,
     handleClose: () => void,
+    selected: number,
+    setSelected: (num: number) => void,
 }
 
-export const CardDisplay = (props: cardProps) => {
+export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected }: cardProps) => {
+    const { items } = cardObj;
     const classes = useStyles();
-    // TODO: change arrow to be a back button, move category to center, add select statement to right for limiting number of cards
+    const numsArray: number[] = [];
+    for (var i = 0; i < items.length; i++){
+        if (i === 0){
+            numsArray.push(i+1);
+        }
+        if (items.length === 1) break;
+        if (items.length < 5 && items.length - 1 !== i && i > 0){
+            numsArray.push(i);
+        } else if (items.length > 5 && items.length < 10 && i % 2 === 0 && items.length -1 !== i && i > 0){
+            numsArray.push(i);
+        } else if (items.length > 10 && items.length < 20 && i % 3 === 0 && items.length -1 !== i && i > 0){
+            numsArray.push(i);
+        }else if (items.length > 20 && i % 10 === 0 && items.length -1 !== i && i > 0){
+            numsArray.push(i);
+        }
+        if (items.length - 1 === i){
+            numsArray.push(i+1);
+        }
+    }
+    const handleChange = (value: number) => {
+        setSelected(value);
+    };
+    
     return (
         <div>
-            <Dialog fullScreen open={props.open} onClose={props.handleClose}>
+            <Dialog fullScreen open={open} onClose={handleClose}>
                 <AppBar className={classes.appBar}>
-                    <Grid container alignItems='center'>
-                        <Grid item xs={11} style={{ paddingLeft: '3%' }}>
+                    <Grid container  alignItems='center' justify='space-around' direction="row">
+                        <Grid item xs style={{ paddingLeft: '16px' }}>
+                            <IconButton color="inherit" onClick={handleClose} aria-label="back">
+                                <ArrowBackIcon aria-label='back' />
+                            </IconButton>
+                        </Grid>
+                        <Grid item xs style={{textAlign: 'center' }}>
                             <Typography variant="h6" className={classes.title}>
-                                {`Category: `}<strong>{props.cardObj.type}</strong>
+                                {`Category: `}<strong>{cardObj.type}</strong>
                             </Typography>
                         </Grid>
-                        <Grid item xs={1}>
-                            <IconButton color="inherit" onClick={props.handleClose} aria-label="close">
-                                <CloseIcon />
-                            </IconButton>
+                        <Grid item xs style={{ textAlign: 'right', paddingRight: '20px' }}>
+                            <Grid container alignItems='center' justify='flex-end' direction='row'>
+                                <Grid item xs={8} style={{ textAlign: 'right' }}>
+                                    <p>Cards Shown</p>
+                                </Grid>
+                                <Grid item xs={4} style={{ textAlign: 'left' }}>
+                                    <FormControl className={classes.formControl}>
+                                        <Select
+                                        id="select-card-numbers-id"
+                                        value={selected}
+                                        defaultValue={1}
+                                        onChange={(name) => {name && handleChange(name.target.value as number)}}
+                                        className={classes.selectEmpty}
+                                        >
+                                            {numsArray.map((num, key) => {
+                                                return (
+                                                    <MenuItem value={num} key={key}>{num}</MenuItem>
+                                                );
+                                            })}
+                                        </Select>
+                                    </FormControl>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </AppBar>
-                <Grid container alignItems='center' justify='center'>
-                    {props.cardObj.items && props.cardObj.items.map((item, key) => {
-                        return (
-                                <Grid key={key} item xs={3} className={classes.gridSpacing}>
-                                    <Card card={item} key={key} />
-                                </Grid>
-                            );
-                        })}
-                </Grid>
+                <CardPageNavigation items={cardObj.items} cardsPerPage={selected} />
             </Dialog>
         </div>
     );

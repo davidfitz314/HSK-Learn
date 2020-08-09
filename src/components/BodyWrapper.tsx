@@ -4,6 +4,7 @@ import level1 from '../jsontextfiles/level1.json';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { CardDisplay } from './CardDisplay';
+import { languageGroups, cardGroups } from './Utils/Types';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {
@@ -26,29 +27,20 @@ type bodyWrapperProps = {
     currentLevel: number,
 }
 
-interface languageGroups {
-    chinese: string;
-    pinyin: string;
-    english: string;
-}
-
-type cardTypes = {
-    type: string,
-    items: languageGroups[],
-}
-
 export const BodyWrapper = (props: bodyWrapperProps ) => {
     const classes = useStyles();
     const allCardWords: languageGroups[] = [];
     level1.map(group => group.items.map(each => allCardWords.push(each)));
-    const [category, setSelectedCategory] = useState<cardTypes>({ type: "All Cards", items: allCardWords });
+    const [category, setSelectedCategory] = useState<cardGroups>({ type: "All Cards", items: allCardWords });
     const [open, setOpen] = useState(false);
-    const openCategoryDialog = (cat: cardTypes) => {
+    const [selected, setSelected] = useState<number>(1);
+    const openCategoryDialog = (cat: cardGroups) => {
         setSelectedCategory(cat);
         setOpen(true);
     }
     const closeCategoryDialog = () => {
         setSelectedCategory({ type: "All Cards", items: allCardWords });
+        setSelected(1);
         setOpen(false);
     }
     return (
@@ -66,7 +58,7 @@ export const BodyWrapper = (props: bodyWrapperProps ) => {
                     <Button className={classes.button} onClick={()=>openCategoryDialog({ type: 'All Cards', items: allCardWords })}>All Cards</Button>
                 </Grid>
             </Grid>
-            <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} />
+            <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} selected={selected} setSelected={setSelected} />
             {props.children}
         </div>
     )
