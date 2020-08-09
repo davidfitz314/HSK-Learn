@@ -14,16 +14,12 @@ import { CardPageNavigation } from './CardPageNavigation';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
-        position: 'relative',
+        position: 'fixed',
         backgroundColor: '#00a500',
-        
     },
     title: {
         marginLeft: theme.spacing(2),
         flex: 1,
-    },
-    gridSpacing: {
-        margin: theme.spacing(2),
     },
     formControl: {
         margin: theme.spacing(1),

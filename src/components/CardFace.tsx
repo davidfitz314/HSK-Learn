@@ -1,5 +1,7 @@
 import React from 'react';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, makeStyles, Theme, withStyles } from '@material-ui/core/styles';
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
+import Tooltip from "@material-ui/core/Tooltip";
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     cardStyle: {
@@ -10,7 +12,18 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textAlign: 'center',
         border: '1px solid #aeb301',
         borderRadius: theme.spacing(3),
-    }
+        // "&:hover": {
+        //     backgroundColor: 'white',
+        // }
+    },
+    help: {
+        color: 'dark-grey',
+        backgroundColor: '#00a500',
+        "&:hover": {
+            color: 'yellow',
+            backgroundColor: '#00a500',
+        }
+    },
 }));
 
 type cardFaceProps = {
@@ -19,9 +32,35 @@ type cardFaceProps = {
     flip: () => void;
 }
 
+const HtmlTooltip = withStyles((theme: Theme) => ({
+    tooltip: {
+      backgroundColor: '#f5f5f9',
+      color: 'rgba(0, 0, 0, 0.87)',
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: '1px solid #dadde9',
+    },
+  }))(Tooltip);
+
 export const CardFace = ({text, hint, flip}: cardFaceProps) => {
     const classes = useStyles();
     return (
-        <div onClick={()=>flip()} className={classes.cardStyle}><h2>{text}</h2></div>
+        <div onClick={()=>flip()} className={classes.cardStyle}>
+            <h2>
+                {text}
+            </h2>
+            {hint && (
+                <HtmlTooltip
+                    placement='bottom'
+                    title={
+                    <React.Fragment>
+                        <h3>{hint}</h3>
+                    </React.Fragment>
+                    }
+                >
+                <EmojiObjectsIcon className={classes.help} />
+                </HtmlTooltip>
+            )}
+        </div>
     )
 };

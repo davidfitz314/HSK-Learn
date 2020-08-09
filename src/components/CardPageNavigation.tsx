@@ -5,14 +5,8 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { languageGroups } from './Utils/Types';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
-    appBar: {
-        position: 'relative',
-        backgroundColor: '#00a500',
-        
-    },
-    title: {
-        marginLeft: theme.spacing(2),
-        flex: 1,
+    content: {
+        marginTop: theme.spacing(8),
     },
     gridSpacing: {
         margin: theme.spacing(2),
@@ -43,7 +37,7 @@ export const CardPageNavigation = ({items, cardsPerPage}: cardPageNavProps) => {
         }
     }
     return (
-        <div>
+        <div className={classes.content}>
         <Grid container alignItems='center' justify='center'>
             {items && items.map((item, key) => {
             return (
