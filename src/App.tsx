@@ -11,7 +11,7 @@ function App() {
   return (
     <div id="wrapper">
       <NavBar id="header" setPage={setLevel} />
-      <BodyWrapper currentLevel={level} allCardWords={allCardWords} level1={level1} />
+      <BodyWrapper currentLevel={level} allCardWords={allCardWords} level={level1} />
     </div>
   );
 }

@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 type bodyWrapperProps = {
     children?: any,
     currentLevel: number,
-    level1: cardGroups[],
+    level: cardGroups[],
     allCardWords: languageGroups[],
 }
 
-export const BodyWrapper = ({ level1, allCardWords, currentLevel, children}: bodyWrapperProps ) => {
+export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: bodyWrapperProps ) => {
     const classes = useStyles();
     
     const [category, setSelectedCategory] = useState<cardGroups>(level1[0]);
@@ -45,7 +45,7 @@ export const BodyWrapper = ({ level1, allCardWords, currentLevel, children}: bod
         <div className={classes.bodyWrapper}>
             <h3>HSK Level {currentLevel}</h3>
             <Grid container alignContent='stretch'>
-                {currentLevel === 1 && level1 && level1.map((subject, key) => {
+                {currentLevel === 1 && level && level.map((subject, key) => {
                     return (
                         <Grid item xs={4} key={key}>
                             <Button className={classes.button} onClick={()=>openCategoryDialog(subject)}>{subject.type}</Button>
