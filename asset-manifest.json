@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/HSK-Learn/static/css/main.60bb5a39.chunk.css",
-    "main.js": "/HSK-Learn/static/js/main.a069b4f6.chunk.js",
-    "main.js.map": "/HSK-Learn/static/js/main.a069b4f6.chunk.js.map",
+    "main.js": "/HSK-Learn/static/js/main.4b6aa3ef.chunk.js",
+    "main.js.map": "/HSK-Learn/static/js/main.4b6aa3ef.chunk.js.map",
     "runtime-main.js": "/HSK-Learn/static/js/runtime-main.5a7c36d5.js",
     "runtime-main.js.map": "/HSK-Learn/static/js/runtime-main.5a7c36d5.js.map",
     "static/js/2.6e9b1282.chunk.js": "/HSK-Learn/static/js/2.6e9b1282.chunk.js",
     "static/js/2.6e9b1282.chunk.js.map": "/HSK-Learn/static/js/2.6e9b1282.chunk.js.map",
     "index.html": "/HSK-Learn/index.html",
-    "precache-manifest.9804cb8426a0157a46248ddde5531648.js": "/HSK-Learn/precache-manifest.9804cb8426a0157a46248ddde5531648.js",
+    "precache-manifest.0798ce04d7b4aea54d3977c72e016623.js": "/HSK-Learn/precache-manifest.0798ce04d7b4aea54d3977c72e016623.js",
     "service-worker.js": "/HSK-Learn/service-worker.js",
     "static/css/main.60bb5a39.chunk.css.map": "/HSK-Learn/static/css/main.60bb5a39.chunk.css.map",
     "static/js/2.6e9b1282.chunk.js.LICENSE.txt": "/HSK-Learn/static/js/2.6e9b1282.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5a7c36d5.js",
     "static/js/2.6e9b1282.chunk.js",
     "static/css/main.60bb5a39.chunk.css",
-    "static/js/main.a069b4f6.chunk.js"
+    "static/js/main.4b6aa3ef.chunk.js"
   ]
 }
