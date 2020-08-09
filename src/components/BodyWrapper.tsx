@@ -31,7 +31,7 @@ type bodyWrapperProps = {
 export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: bodyWrapperProps ) => {
     const classes = useStyles();
     
-    const [category, setSelectedCategory] = useState<cardGroups>(level1[0]);
+    const [category, setSelectedCategory] = useState<cardGroups>(level[0]);
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState<number>(1);
     const openCategoryDialog = (cat: cardGroups) => {
