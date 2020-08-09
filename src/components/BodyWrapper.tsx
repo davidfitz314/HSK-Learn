@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import level1 from '../jsontextfiles/level1.json';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { CardDisplay } from './CardDisplay';
@@ -25,13 +24,14 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 type bodyWrapperProps = {
     children?: any,
     currentLevel: number,
+    level1: cardGroups[],
+    allCardWords: languageGroups[],
 }
 
-export const BodyWrapper = (props: bodyWrapperProps ) => {
+export const BodyWrapper = ({ level1, allCardWords, currentLevel, children}: bodyWrapperProps ) => {
     const classes = useStyles();
-    const allCardWords: languageGroups[] = [];
-    level1.map(group => group.items.map(each => allCardWords.push(each)));
-    const [category, setSelectedCategory] = useState<cardGroups>({ type: "All Cards", items: allCardWords });
+    
+    const [category, setSelectedCategory] = useState<cardGroups>(level1[0]);
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState<number>(1);
     const openCategoryDialog = (cat: cardGroups) => {
@@ -39,15 +39,13 @@ export const BodyWrapper = (props: bodyWrapperProps ) => {
         setOpen(true);
     }
     const closeCategoryDialog = () => {
-        setSelectedCategory({ type: "All Cards", items: allCardWords });
-        setSelected(1);
         setOpen(false);
     }
     return (
         <div className={classes.bodyWrapper}>
-            <h3>HSK Level {props.currentLevel}</h3>
+            <h3>HSK Level {currentLevel}</h3>
             <Grid container alignContent='stretch'>
-                {props.currentLevel === 1 && level1 && level1.map((subject, key) => {
+                {currentLevel === 1 && level1 && level1.map((subject, key) => {
                     return (
                         <Grid item xs={4} key={key}>
                             <Button className={classes.button} onClick={()=>openCategoryDialog(subject)}>{subject.type}</Button>
@@ -59,7 +57,7 @@ export const BodyWrapper = (props: bodyWrapperProps ) => {
                 </Grid>
             </Grid>
             <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} selected={selected} setSelected={setSelected} />
-            {props.children}
+            {children}
         </div>
     )
 }

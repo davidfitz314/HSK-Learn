@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Card } from './Card';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -18,9 +18,9 @@ type cardPageNavProps = {
     cardsPerPage: number,
 }
 
-function shuffle(array: languageGroups[]) {
+const shuffle = (array: languageGroups[]) => {
     return array.sort(() => Math.random() - 0.5);
-  }
+}
 
 export const CardPageNavigation = ({items, cardsPerPage}: cardPageNavProps) => {
     const classes = useStyles();
