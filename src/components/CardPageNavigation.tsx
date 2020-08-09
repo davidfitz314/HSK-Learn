@@ -18,8 +18,13 @@ type cardPageNavProps = {
     cardsPerPage: number,
 }
 
+function shuffle(array: languageGroups[]) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
 export const CardPageNavigation = ({items, cardsPerPage}: cardPageNavProps) => {
     const classes = useStyles();
+    const shuffledItems = shuffle(items);
     const [page, setPage] = useState(0);
     const [maxPage, setMaxPage] = useState((items.length) / cardsPerPage)
     const nextPage = () => { 
@@ -39,7 +44,7 @@ export const CardPageNavigation = ({items, cardsPerPage}: cardPageNavProps) => {
     return (
         <div className={classes.content}>
         <Grid container alignItems='center' justify='center'>
-            {items && items.map((item, key) => {
+            {shuffledItems.map((item, key) => {
             return (
                     <Grid key={key} item xs={2} className={classes.gridSpacing}>
                         <Card card={item} key={key} nextPage={nextPage} prevPage={prevPage} />
