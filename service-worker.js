@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/HSK-Learn/precache-manifest.607515aa8a89da61e2359ef63573b433.js"
+  "/HSK-Learn/precache-manifest.c8484fd143fe7d9e5ee1d797c78e7d49.js"
 );
 
 self.addEventListener('message', (event) => {
