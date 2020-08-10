@@ -13,12 +13,12 @@ export const Card = ({ card, english}: cardTypes) => {
     const setCardFlip = () => setFlipped(!flipped);
     return (
         <>
-        {english && (
+        {!english && (
             <ReactCardFlip isFlipped={flipped} infinite>
                 <CardFace key="front" text={card.chinese} flip={setCardFlip} hint={card.pinyin} />
                 <CardFace key="back" text={card.english} flip={setCardFlip} />
             </ReactCardFlip>)}
-        {!english && (
+        {english && (
             <ReactCardFlip isFlipped={flipped} infinite>
                 <CardFace key="front" text={card.english} flip={setCardFlip} />
                 <CardFace key="back" text={card.chinese} flip={setCardFlip} hint={card.pinyin} />

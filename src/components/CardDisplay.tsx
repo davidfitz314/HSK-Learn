@@ -44,9 +44,11 @@ type cardProps = {
     setSelected: (num: number) => void,
     page: number,
     setPage: (num:number) => void;
+    english: boolean,
+    setEnglish: (isEng: boolean) => void,
 }
 
-export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected, setPage, page }: cardProps) => {
+export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected, setPage, page, english, setEnglish }: cardProps) => {
     const { items } = cardObj;
     const classes = useStyles();
     const numsArray: number[] = [];
@@ -114,7 +116,7 @@ export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected,
                         </Grid>
                     </Grid>
                 </AppBar>
-                <CardPageNavigation items={cardObj.items} cardsPerPage={selected} page={page} setPage={setPage} />
+                <CardPageNavigation items={cardObj.items} cardsPerPage={selected} page={page} setPage={setPage} english={english} setEnglish={setEnglish} />
             </Dialog>
         </div>
     );

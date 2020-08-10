@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Card } from './Card';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
@@ -21,6 +21,8 @@ type cardPageNavProps = {
     cardsPerPage: number,
     page: number,
     setPage: (num: number) => void,
+    english: boolean,
+    setEnglish: (isEng: boolean) => void,
 }
 
 const shuffle = (array: languageGroups[]) => {
@@ -45,11 +47,10 @@ const getCardsPerPage = (items: languageGroups[], cardsPerPage: number) => {
     return outArray;
 }
 
-export const CardPageNavigation = ({items, cardsPerPage, page, setPage}: cardPageNavProps) => {
+export const CardPageNavigation = ({items, cardsPerPage, page, setPage, english, setEnglish}: cardPageNavProps) => {
     const classes = useStyles();
     const shuffledItems = shuffle(items);
     const cardsArray: languageGroups[][] = getCardsPerPage(shuffledItems, cardsPerPage);
-    const [english, setEnglish] = useState(false);
     console.log('cardsArray', cardsArray);
     const nextPage = () => { 
         if (cardsArray.length - 1 > page) {
@@ -94,9 +95,8 @@ export const CardPageNavigation = ({items, cardsPerPage, page, setPage}: cardPag
             </Grid>
         </Grid>
         <IconButton  color="inherit" onClick={()=>setEnglish(!english)} style={{ height: '32px', width: '32px', position: 'fixed', bottom: '12px', right: '32px', border: ' 1.5px solid #006400' }} aria-label="forward">
-            <p style={{ fontSize: 'medium', color: '#006400' }}>{!english ? 'EN' : 'CN'}</p>
+            <p style={{ fontSize: 'medium', color: '#006400' }}>{english ? 'EN' : 'CN'}</p>
         </IconButton>
-        
         </div>
     )
 }
