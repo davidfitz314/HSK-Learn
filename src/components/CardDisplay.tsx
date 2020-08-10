@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     appBar: {
         position: 'fixed',
         backgroundColor: '#00a500',
+        color: '#d3E145',
+        textColor: '#d3E145',
     },
     title: {
         marginLeft: theme.spacing(2),
@@ -24,12 +26,12 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     formControl: {
         margin: theme.spacing(1),
         minWidth: 80,
-        color: 'white',
-        textColor: 'white',
+        color: '#d3E145',
+        textColor: '#d3E145',
     },
     selectEmpty: {
-        color: 'white',
-        textColor: 'white',
+        color: '#d3E145',
+        textColor: '#d3E145',
         textAlign: 'center',
     },
 }));

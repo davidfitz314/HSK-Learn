@@ -12,18 +12,18 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textAlign: 'center',
         border: '1px solid #aeb301',
         borderRadius: theme.spacing(3),
-        // "&:hover": {
-        //     backgroundColor: 'white',
-        // }
     },
     help: {
-        color: 'dark-grey',
+        color: '#006400',
         backgroundColor: '#00a500',
         "&:hover": {
-            color: 'yellow',
+            color: '#bfc90f',
             backgroundColor: '#00a500',
         }
     },
+    text: {
+        color: '#d3E145',
+    }
 }));
 
 type cardFaceProps = {
@@ -46,9 +46,9 @@ export const CardFace = ({text, hint, flip}: cardFaceProps) => {
     const classes = useStyles();
     return (
         <div onClick={()=>flip()} className={classes.cardStyle}>
-            <h2>
+            <h1 className={classes.text}>
                 {text}
-            </h2>
+            </h1>
             {hint && (
                 <HtmlTooltip
                     placement='bottom'
