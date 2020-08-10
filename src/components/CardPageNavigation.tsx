@@ -51,7 +51,6 @@ export const CardPageNavigation = ({items, cardsPerPage, page, setPage, english,
     const classes = useStyles();
     const shuffledItems = shuffle(items);
     const cardsArray: languageGroups[][] = getCardsPerPage(shuffledItems, cardsPerPage);
-    console.log('cardsArray', cardsArray);
     const nextPage = () => { 
         if (cardsArray.length - 1 > page) {
             setPage(page+1);
