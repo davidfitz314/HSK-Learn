@@ -1,6 +1,6 @@
 import React from 'react';
 import Dialog from '@material-ui/core/Dialog';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import CloseOutlined from '@material-ui/icons/CloseOutlined';
 import IconButton from '@material-ui/core/IconButton';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
@@ -42,9 +42,11 @@ type cardProps = {
     handleClose: () => void,
     selected: number,
     setSelected: (num: number) => void,
+    page: number,
+    setPage: (num:number) => void;
 }
 
-export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected }: cardProps) => {
+export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected, setPage, page }: cardProps) => {
     const { items } = cardObj;
     const classes = useStyles();
     const numsArray: number[] = [];
@@ -68,6 +70,7 @@ export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected 
     }
     const handleChange = (value: number) => {
         setSelected(value);
+        setPage(0);
     };
     
     return (
@@ -77,7 +80,7 @@ export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected 
                     <Grid container  alignItems='center' justify='space-around' direction="row">
                         <Grid item xs style={{ paddingLeft: '16px' }}>
                             <IconButton color="inherit" onClick={handleClose} aria-label="back">
-                                <ArrowBackIcon aria-label='back' />
+                                <CloseOutlined aria-label='back' />
                             </IconButton>
                         </Grid>
                         <Grid item xs style={{textAlign: 'center' }}>
@@ -111,7 +114,7 @@ export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected 
                         </Grid>
                     </Grid>
                 </AppBar>
-                <CardPageNavigation items={cardObj.items} cardsPerPage={selected} />
+                <CardPageNavigation items={cardObj.items} cardsPerPage={selected} page={page} setPage={setPage} />
             </Dialog>
         </div>
     );

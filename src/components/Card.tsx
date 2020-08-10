@@ -5,17 +5,25 @@ import { languageGroups } from './Utils/Types';
 
 type cardTypes = {
     card: languageGroups,
-    nextPage: () => void,
-    prevPage: () => void,
+    english: boolean,
 }
 
-export const Card = (props: cardTypes) => {
+export const Card = ({ card, english}: cardTypes) => {
     const [flipped, setFlipped] = useState(false);
     const setCardFlip = () => setFlipped(!flipped);
     return (
-        <ReactCardFlip isFlipped={flipped} infinite>
-            <CardFace key="front" text={props.card.chinese} flip={setCardFlip} hint={props.card.pinyin} />
-            <CardFace key="back" text={props.card.english} flip={setCardFlip} />
-        </ReactCardFlip>
+        <>
+        {english && (
+            <ReactCardFlip isFlipped={flipped} infinite>
+                <CardFace key="front" text={card.chinese} flip={setCardFlip} hint={card.pinyin} />
+                <CardFace key="back" text={card.english} flip={setCardFlip} />
+            </ReactCardFlip>)}
+        {!english && (
+            <ReactCardFlip isFlipped={flipped} infinite>
+                <CardFace key="front" text={card.english} flip={setCardFlip} />
+                <CardFace key="back" text={card.chinese} flip={setCardFlip} hint={card.pinyin} />
+            </ReactCardFlip>
+        )}
+        </>
     );
 }

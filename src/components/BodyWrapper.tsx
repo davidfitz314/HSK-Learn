@@ -34,12 +34,15 @@ export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: body
     const [category, setSelectedCategory] = useState<cardGroups>(level[0]);
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState<number>(1);
+    const [page, setPage] = useState(0);
     const openCategoryDialog = (cat: cardGroups) => {
         setSelectedCategory(cat);
         setOpen(true);
     }
     const closeCategoryDialog = () => {
         setOpen(false);
+        setSelected(1);
+        setPage(0);
     }
     return (
         <div className={classes.bodyWrapper}>
@@ -56,7 +59,7 @@ export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: body
                     <Button className={classes.button} onClick={()=>openCategoryDialog({ type: 'All Cards', items: allCardWords })}>All Cards</Button>
                 </Grid>
             </Grid>
-            <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} selected={selected} setSelected={setSelected} />
+            <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} selected={selected} setSelected={setSelected} page={page} setPage={setPage} />
             {children}
         </div>
     )
