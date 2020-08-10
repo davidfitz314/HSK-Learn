@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { CardDisplay } from './CardDisplay';
 import { languageGroups, cardGroups } from './Utils/Types';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {
@@ -62,6 +63,9 @@ export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: body
             </Grid>
             <CardDisplay cardObj={category} open={open} handleClose={closeCategoryDialog} selected={selected} setSelected={setSelected} page={page} setPage={setPage} english={english} setEnglish={setEnglish} />
             {children}
+            <IconButton  color="inherit" onClick={()=>setEnglish(!english)} style={{ height: '32px', width: '32px', position: 'fixed', bottom: '12px', right: '32px', border: ' 1.5px solid #006400' }} aria-label="forward">
+                <p style={{ fontSize: 'medium', color: '#006400' }}>{english ? 'EN' : 'CN'}</p>
+            </IconButton>
         </div>
     )
 }
