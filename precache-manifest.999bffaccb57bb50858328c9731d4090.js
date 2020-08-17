@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a823ed9fc73811d4028891b1157cfc8",
+    "revision": "450f5b9b9abca56393823451e906ed25",
     "url": "/HSK-Learn/index.html"
   },
   {
-    "revision": "eeb45ef92514cf0c85b7",
+    "revision": "3e98750ad7edbc6f9a7b",
     "url": "/HSK-Learn/static/css/main.60bb5a39.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HSK-Learn/static/js/2.4378c6e7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eeb45ef92514cf0c85b7",
-    "url": "/HSK-Learn/static/js/main.da9c0367.chunk.js"
+    "revision": "3e98750ad7edbc6f9a7b",
+    "url": "/HSK-Learn/static/js/main.7fc409dd.chunk.js"
   },
   {
     "revision": "8ef074ca05aef3c58dee",
