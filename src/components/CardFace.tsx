@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textAlign: 'center',
         border: '1px solid #aeb301',
         borderRadius: theme.spacing(3),
+        fontFamily: '"Lucida Console", Monaco, monospace',
+        fontWeight: 'bold',
+        fontSize: '150%',
     },
     help: {
         color: '#006400',
@@ -23,6 +26,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     text: {
         color: '#d3E145',
+        fontFamily: '"Arial Black", Gadget, sans-serif',
     }
 }));
 
@@ -37,7 +41,7 @@ const HtmlTooltip = withStyles((theme: Theme) => ({
       backgroundColor: '#f5f5f9',
       color: 'rgba(0, 0, 0, 0.87)',
       maxWidth: 220,
-      fontSize: theme.typography.pxToRem(12),
+      fontSize: theme.typography.pxToRem(14),
       border: '1px solid #dadde9',
     },
   }))(Tooltip);
