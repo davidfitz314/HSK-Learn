@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textAlign: 'center',
         border: '1px solid #aeb301',
         borderRadius: theme.spacing(3),
-        fontFamily: '"Lucida Console", Monaco, monospace',
         fontWeight: 'bold',
         fontSize: '150%',
     },
@@ -26,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     },
     text: {
         color: '#d3E145',
-        fontFamily: '"Arial Black", Gadget, sans-serif',
+        fontFamily: 'Tahoma, Helvetica, Arial, "Microsoft Yahei","????", STXihei, "????", sans-serif',
     }
 }));
 
