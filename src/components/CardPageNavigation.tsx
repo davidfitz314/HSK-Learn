@@ -25,9 +25,10 @@ type cardPageNavProps = {
     setEnglish: (isEng: boolean) => void,
 }
 
-const shuffle = (array: languageGroups[]) => {
-    return array.sort(() => Math.random() - 0.5);
-}
+// TODO: move shuffle higher in parents state
+// const shuffle = (array: languageGroups[]) => {
+//     return array.sort(() => Math.random() - 0.5);
+// }
 
 const getCardsPerPage = (items: languageGroups[], cardsPerPage: number) => {
     const outArray = [];
@@ -49,8 +50,8 @@ const getCardsPerPage = (items: languageGroups[], cardsPerPage: number) => {
 
 export const CardPageNavigation = ({items, cardsPerPage, page, setPage, english, setEnglish}: cardPageNavProps) => {
     const classes = useStyles();
-    const shuffledItems = shuffle(items);
-    const cardsArray: languageGroups[][] = getCardsPerPage(shuffledItems, cardsPerPage);
+    // const shuffledItems = shuffle(items);
+    const cardsArray: languageGroups[][] = getCardsPerPage(items, cardsPerPage);
     const nextPage = () => { 
         if (cardsArray.length - 1 > page) {
             setPage(page+1);
