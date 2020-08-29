@@ -1,7 +1,7 @@
 import React,  { useState } from 'react';
-import { NavBar } from './components/NavBar';
-import { BodyWrapper } from './components/BodyWrapper';
-import { languageGroups } from './components/Utils/Types';
+import { NavBar } from './components/navigation/NavBar';
+import { BodyWrapper } from './components/flashCardsSimple/BodyWrapper';
+import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
 
 function App() {
