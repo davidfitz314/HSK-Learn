@@ -23,7 +23,7 @@ export const Footer = () => {
     const classes = useStyles();
     return (
         <div className={classes.footer}>
-            <div className={classes.description}>© David Chen-Fitz Productions</div>
+            <div className={classes.description}>© David Chen-Fitz 2020</div>
         </div>
     );
 }
