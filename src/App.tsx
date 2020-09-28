@@ -1,5 +1,6 @@
 import React,  { useState } from 'react';
 import { NavBar } from './components/navigation/NavBar';
+import { Footer } from './components/navigation/Footer';
 import { BodyWrapper } from './components/flashCardsSimple/BodyWrapper';
 import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
@@ -12,6 +13,7 @@ function App() {
     <div id="wrapper">
       <NavBar id="header" setPage={setLevel} />
       <BodyWrapper currentLevel={level} allCardWords={allCardWords} level={level1} />
+      <Footer />
     </div>
   );
 }

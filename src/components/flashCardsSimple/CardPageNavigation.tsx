@@ -25,11 +25,6 @@ type cardPageNavProps = {
     setEnglish: (isEng: boolean) => void,
 }
 
-// TODO: move shuffle higher in parents state
-// const shuffle = (array: languageGroups[]) => {
-//     return array.sort(() => Math.random() - 0.5);
-// }
-
 const getCardsPerPage = (items: languageGroups[], cardsPerPage: number) => {
     const outArray = [];
     var i = 0;
