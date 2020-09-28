@@ -29,9 +29,9 @@ type bodyWrapperProps = {
     allCardWords: languageGroups[],
 }
 
+//TODO: expand currentLevel block as more is added in
 export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: bodyWrapperProps ) => {
     const classes = useStyles();
-    
     const [category, setSelectedCategory] = useState<cardGroups>(level[0]);
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState<number>(1);
@@ -50,7 +50,7 @@ export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: body
         <div className={classes.bodyWrapper}>
             <h3>HSK Level {currentLevel}</h3>
             <Grid container alignContent='stretch'>
-                {currentLevel === 1 && level && level.map((subject, key) => {
+                {currentLevel <= 2 && level && level.map((subject, key) => {
                     return (
                         <Grid item xs={4} key={key}>
                             <Button className={classes.button} onClick={()=>openCategoryDialog(subject)}>{subject.type}</Button>

@@ -1,0 +1,852 @@
+[
+    {   
+        "type" : "Personal pron",
+        "items": [
+            {
+                "chinese": "我",
+                "pinyin": "wǒ",
+                "english": "I, me"
+            },
+            {
+                "chinese": "我们",
+                "pinyin": "wǒmen",
+                "english": "we, us (pl.)"
+            },
+            {
+                "chinese": "你",
+                "pinyin": "nǐ",
+                "english": "you"
+            },
+            {
+                "chinese": "你们",
+                "pinyin": "nǐmen",
+                "english": "you (pl.)"
+            },
+            {
+                "chinese": "他",
+                "pinyin": "tā",
+                "english": "he, him"
+            },
+            {
+                "chinese": "她",
+                "pinyin": "tā",
+                "english": "she, her"
+            },
+            {
+                "chinese": "他们",
+                "pinyin": " tāmen",
+                "english": "they (male+female / male, pl.)"
+            },
+            {
+                "chinese": "她们",
+                "pinyin": "tāmen",
+                "english": "they (females, pl.)"
+            }
+        ]
+    },
+    {
+        "type" : "Demonstrative Pron",
+        "items": [
+            {
+                "chinese": "这 (这儿)",
+                "pinyin": "zhè ( zhèr)",
+                "english": "this (here)"
+            },
+            {
+                "chinese": "那 (那儿)",
+                "pinyin": "nà (nàr)",
+                "english": "that (there)"
+            }
+        ]
+    },
+    {
+        "type" : "Interrogative Pron",
+        "items": [
+            {
+                "chinese": "哪（哪儿）",
+                "pinyin": "nǎ (nǎr)",
+                "english": "where"
+            },
+            {
+                "chinese": "谁",
+                "pinyin": "shéi",
+                "english": "who"
+            },
+            {
+                "chinese": "什么",
+                "pinyin": "shénme",
+                "english": "what, why"
+            },
+            {
+                "chinese": "多少",
+                "pinyin": "duōshǎo",
+                "english": "how many, how much"
+            },
+            {
+                "chinese": "几",
+                "pinyin": "jǐ",
+                "english": "a few, how many"
+            },
+            {
+                "chinese": "怎么",
+                "pinyin": "zěnme",
+                "english": "how"
+            },
+            {
+                "chinese": "怎么样",
+                "pinyin": "zěnmeyàng",
+                "english": "how about"
+            },
+            {
+                "chinese": "您",
+                "pinyin": "nín",
+                "english": "you"
+            },
+            {
+                "chinese": "它",
+                "pinyin": "tā",
+                "english": "it"
+            },
+            {
+                "chinese": "大家",
+                "pinyin": "dàjiā",
+                "english": "everyone"
+            },
+            {
+                "chinese": "每",
+                "pinyin": "měi",
+                "english": "every"
+            },
+            {
+                "chinese": "为什么",
+                "pinyin": "wèishénme",
+                "english": "why"
+            }
+        ]
+    },
+    {
+        "type" : "Numberal",
+        "items": [
+            {
+                "chinese": "一",
+                "pinyin": "yī",
+                "english": "one"
+            },
+            {
+                "chinese": "二",
+                "pinyin": "èr",
+                "english": "two"
+            },
+            {
+                "chinese": "三",
+                "pinyin": "sān",
+                "english": "three"
+            },
+            {
+                "chinese": "四",
+                "pinyin": "sì",
+                "english": "four"
+            },
+            {
+                "chinese": "五",
+                "pinyin": "wǔ",
+                "english": "five"
+            },
+            {
+                "chinese": "六",
+                "pinyin": "liù",
+                "english": "six"
+            },
+            {
+                "chinese": "七",
+                "pinyin": "qī",
+                "english": "seven"
+            },
+            {
+                "chinese": "八",
+                "pinyin": "bā",
+                "english": "eight"
+            },
+            {
+                "chinese": "九",
+                "pinyin": "jiǔ",
+                "english": "nine"
+            },
+            {
+                "chinese": "十",
+                "pinyin": "shí",
+                "english": "ten"
+            },
+            {
+                "chinese": "零",
+                "pinyin": "líng",
+                "english": "zero"
+            },
+            {
+                "chinese": "两",
+                "pinyin": "liǎng",
+                "english": "two"
+            },
+            {
+                "chinese": "百",
+                "pinyin": "bǎi",
+                "english": "hundred"
+            },
+            {
+                "chinese": "千",
+                "pinyin": "qiān",
+                "english": "thousand"
+            },
+            {
+                "chinese": "第一",
+                "pinyin": "dìyī",
+                "english": "first"
+            }
+        ]
+    },
+    {
+        "type" : "Quantifier",
+        "items": [
+            {
+                "chinese": "个",
+                "pinyin": "gè",
+                "english": "one, a, an"
+            },
+            {
+                "chinese": "岁",
+                "pinyin": "suì",
+                "english": "year"
+            },
+            {
+                "chinese": "本",
+                "pinyin": "běn",
+                "english": "volume"
+            },
+            {
+                "chinese": "些",
+                "pinyin": "xiē",
+                "english": "some"
+            },
+            {
+                "chinese": "块",
+                "pinyin": "kuài",
+                "english": "piece"
+            },
+            {
+                "chinese": "次",
+                "pinyin": "cì",
+                "english": "number"
+            },
+            {
+                "chinese": "公斤",
+                "pinyin": "gōngjīn",
+                "english": "kilogram"
+            },
+            {
+                "chinese": "元",
+                "pinyin": "yuán",
+                "english": "yuan"
+            },
+            {
+                "chinese": "件",
+                "pinyin": "jiàn",
+                "english": "piece"
+            },
+            {
+                "chinese": "张",
+                "pinyin": "zhāng",
+                "english": "sheet"
+            }
+        ]
+    },
+    {
+        "type" : "Adverb",
+        "items": [
+            {
+                "chinese": "不",
+                "pinyin": "bù",
+                "english": "no"
+            },
+            {
+                "chinese": "没",
+                "pinyin": "méi",
+                "english": "no"
+            },
+            {
+                "chinese": "很",
+                "pinyin": "hěn",
+                "english": "quite, very"
+            },
+            {
+                "chinese": "太",
+                "pinyin": "tài",
+                "english": "too"
+            },
+            {
+                "chinese": "都",
+                "pinyin": "dōu",
+                "english": "all"
+            },
+            {
+                "chinese": "别",
+                "pinyin": "bié",
+                "english": "other"
+            },
+            {
+                "chinese": "非常",
+                "pinyin": "fēicháng",
+                "english": "very"
+            },
+            {
+                "chinese": "也",
+                "pinyin": "yě",
+                "english": "likewise"
+            },
+            {
+                "chinese": "还",
+                "pinyin": "hái",
+                "english": "still"
+            },
+            {
+                "chinese": "最",
+                "pinyin": "zuì",
+                "english": "most"
+            },
+            {
+                "chinese": "真",
+                "pinyin": "zhēn",
+                "english": "real"
+            },
+            {
+                "chinese": "正在",
+                "pinyin": "zhèngzài",
+                "english": "be being"
+            },
+            {
+                "chinese": "已经",
+                "pinyin": "yǐjīng",
+                "english": "already"
+            },
+            {
+                "chinese": "一起",
+                "pinyin": "yìqǐ",
+                "english": "together"
+            },
+            {
+                "chinese": "再",
+                "pinyin": "zài",
+                "english": "again"
+            },
+            {
+                "chinese": "就",
+                "pinyin": "jiǜ",
+                "english": "at once"
+            }
+        ]
+    },
+    {
+        "type" : "Conjunction",
+        "items": [
+            {
+                "chinese": "和",
+                "pinyin": "hé",
+                "english": "and"
+            },
+            {
+                "chinese": "因为",
+                "pinyin": "yīnwèi",
+                "english": "because"
+            },
+            {
+                "chinese": "所以",
+                "pinyin": "suǒyǐ",
+                "english": "so"
+            },
+            {
+                "chinese": "但是",
+                "pinyin": "dànshì",
+                "english": "but"
+            }
+        ]
+    },
+    {
+        "type" : "Preposition",
+        "items": [
+            {
+                "chinese": "在",
+                "pinyin": "zài",
+                "english": "in, at"
+            },
+            {
+                "chinese": "从",
+                "pinyin": "cóng",
+                "english": "from"
+            },
+            {
+                "chinese": "对",
+                "pinyin": "duì",
+                "english": "right"
+            },
+            {
+                "chinese": "此",
+                "pinyin": "cǐ",
+                "english": "this"
+            },
+            {
+                "chinese": "向",
+                "pinyin": "xiàng",
+                "english": "towards"
+            },
+            {
+                "chinese": "离",
+                "pinyin": "lí",
+                "english": "leave"
+            }
+        ]
+    },
+    {
+        "type" : "Auxiliary",
+        "items": [
+            {
+                "chinese": "的",
+                "pinyin": "de",
+                "english": "Auxilary Word, No English Translation Available."
+            },
+            {
+                "chinese": "了",
+                "pinyin": "le",
+                "english": "Auxilary Word, No English Translation Available."
+            },
+            {
+                "chinese": "吗",
+                "pinyin": "ma",
+                "english": "Auxilary Word, No English Translation Available."
+            },
+            {
+                "chinese": "呢",
+                "pinyin": "ne",
+                "english": "Auxilary Word, No English Translation Available."
+            },
+            {
+                "chinese": "得",
+                "pinyin": "dé",
+                "english": ""
+            },
+            {
+                "chinese": "着",
+                "pinyin": "zhe",
+                "english": ""
+            },
+            {
+                "chinese": "过",
+                "pinyin": "guò",
+                "english": ""
+            },
+            {
+                "chinese": "吧",
+                "pinyin": "ba",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Interjection",
+        "items": [
+            {
+                "chinese": "喂",
+                "pinyin": "wèi",
+                "english": "hello"
+            }
+        ]
+    },
+    {
+        "type" : "Noun",
+        "items": [
+            {
+                "chinese": "家",
+                "pinyin": "jiā",
+                "english": "home"
+            },
+            {
+                "chinese": "学校",
+                "pinyin": "xuéxiào",
+                "english": "school"
+            },
+            {
+                "chinese": "饭馆",
+                "pinyin": "fàndiàn",
+                "english": "restaurant"
+            },
+            {
+                "chinese": "商店",
+                "pinyin": "shāngdiàn",
+                "english": "store"
+            },
+            {
+                "chinese": "医院",
+                "pinyin": "yīyuàn",
+                "english": "hospital"
+            },
+            {
+                "chinese": "火车站",
+                "pinyin": "huǒchēzhàn",
+                "english": "train station"
+            },
+            {
+                "chinese": "中国",
+                "pinyin": "Zhōngguò",
+                "english": "China"
+            },
+            {
+                "chinese": "北京",
+                "pinyin": "Běijīng",
+                "english": "Beijing"
+            },
+            {
+                "chinese": "上",
+                "pinyin": "shàng",
+                "english": "up"
+            },
+            {
+                "chinese": "下",
+                "pinyin": "xià",
+                "english": "down"
+            },
+            {
+                "chinese": "前面",
+                "pinyin": "qiánmiàn",
+                "english": "front"
+            },
+            {
+                "chinese": "后面",
+                "pinyin": "hòumiàn",
+                "english": "behind"
+            },
+            {
+                "chinese": "里",
+                "pinyin": "lǐmiàn",
+                "english": "inside"
+            },
+            {
+                "chinese": "今天",
+                "pinyin": "jīntiān",
+                "english": "today"
+            },
+            {
+                "chinese": "明天",
+                "pinyin": "míngtiān",
+                "english": "tomorrow"
+            },
+            {
+                "chinese": "昨天",
+                "pinyin": "zuótiān",
+                "english": "yesterday"
+            },
+            {
+                "chinese": "上午",
+                "pinyin": "shàngwǔ",
+                "english": "morning"
+            },
+            {
+                "chinese": "中午",
+                "pinyin": "zhōngwǔ",
+                "english": "noon"
+            },
+            {
+                "chinese": "下午",
+                "pinyin": "xiàwǔ",
+                "english": "afternoon"
+            },
+            {
+                "chinese": "年",
+                "pinyin": "nián",
+                "english": "year"
+            },
+            {
+                "chinese": "月",
+                "pinyin": "yuè",
+                "english": "month"
+            },
+            {
+                "chinese": "日",
+                "pinyin": "rì",
+                "english": "day"
+            },
+            {
+                "chinese": "星期",
+                "pinyin": "xīngqī",
+                "english": "week"
+            },
+            {
+                "chinese": "点",
+                "pinyin": "diǎn",
+                "english": "dot, spot"
+            },
+            {
+                "chinese": "分钟",
+                "pinyin": "fēnzhōng",
+                "english": "minute"
+            },
+            {
+                "chinese": "现在",
+                "pinyin": "xiànzài",
+                "english": "now"
+            },
+            {
+                "chinese": "时候",
+                "pinyin": "shíhou",
+                "english": "time"
+            },
+            {
+                "chinese": "爸爸",
+                "pinyin": "bàba",
+                "english": "father"
+            },
+            {
+                "chinese": "妈妈",
+                "pinyin": "māma",
+                "english": "mother"
+            },
+            {
+                "chinese": "儿子",
+                "pinyin": "érzi",
+                "english": "son"
+            },
+            {
+                "chinese": "女儿",
+                "pinyin": "nǚér",
+                "english": "daughter"
+            },
+            {
+                "chinese": "老师",
+                "pinyin": "lǎoshī",
+                "english": "teacher"
+            },
+            {
+                "chinese": "学生",
+                "pinyin": "xuéshēng",
+                "english": "student"
+            },
+            {
+                "chinese": "同学",
+                "pinyin": "tóngxué",
+                "english": "classmate"
+            },
+            {
+                "chinese": "朋友",
+                "pinyin": "péngyǒu",
+                "english": "friend"
+            },
+            {
+                "chinese": "医生",
+                "pinyin": "yīshēng",
+                "english": "doctor"
+            },
+            {
+                "chinese": "先生",
+                "pinyin": "xiānsheng",
+                "english": "sir"
+            },
+            {
+                "chinese": "小姐",
+                "pinyin": "xiǎojiě",
+                "english": "Miss"
+            },
+            {
+                "chinese": "衣服",
+                "pinyin": "yīfu",
+                "english": "cloth"
+            },
+            {
+                "chinese": "水",
+                "pinyin": "shuǐ",
+                "english": "water"
+            },
+            {
+                "chinese": "菜",
+                "pinyin": "cài",
+                "english": "dish"
+            },
+            {
+                "chinese": "米饭",
+                "pinyin": "mǐfàn",
+                "english": "rice"
+            },
+            {
+                "chinese": "水果",
+                "pinyin": "shuǐguǒ",
+                "english": "fruit"
+            },
+            {
+                "chinese": "苹果",
+                "pinyin": "píngguǒ",
+                "english": "apple"
+            },
+            {
+                "chinese": "茶",
+                "pinyin": "chá",
+                "english": "tea"
+            },
+            {
+                "chinese": "杯子",
+                "pinyin": "bēizi",
+                "english": "cup"
+            },
+            {
+                "chinese": "钱",
+                "pinyin": "qián",
+                "english": "money"
+            },
+            {
+                "chinese": "飞机",
+                "pinyin": "fēijī",
+                "english": "airplane"
+            },
+            {
+                "chinese": "出租车",
+                "pinyin": "chūzūchē",
+                "english": "taxi"
+            },
+            {
+                "chinese": "电视",
+                "pinyin": "diànshì",
+                "english": "television"
+            },
+            {
+                "chinese": "电脑",
+                "pinyin": "diànnǎo",
+                "english": "computer"
+            },
+            {
+                "chinese": "电影",
+                "pinyin": "diànyǐng",
+                "english": "movie"
+            },
+            {
+                "chinese": "天气",
+                "pinyin": "tiānqì",
+                "english": "weather"
+            },
+            {
+                "chinese": "猫",
+                "pinyin": "māo",
+                "english": "cat"
+            },
+            {
+                "chinese": "狗",
+                "pinyin": "gǒu",
+                "english": "dog"
+            },
+            {
+                "chinese": "东西",
+                "pinyin": "dōngxi",
+                "english": "thing"
+            },
+            {
+                "chinese": "人",
+                "pinyin": "rén",
+                "english": "person"
+            },
+            {
+                "chinese": "名字",
+                "pinyin": "míngzi",
+                "english": "name"
+            },
+            {
+                "chinese": "书",
+                "pinyin": "shū",
+                "english": "book"
+            },
+            {
+                "chinese": "汉语",
+                "pinyin": "hànyǔ",
+                "english": "mandarin Chinese"
+            },
+            {
+                "chinese": "字",
+                "pinyin": "zì",
+                "english": "character"
+            },
+            {
+                "chinese": "桌子",
+                "pinyin": "zhuōzi",
+                "english": "desk"
+            },
+            {
+                "chinese": "椅子",
+                "pinyin": "yǐzi",
+                "english": "chair"
+            },
+            {
+                "chinese": "门",
+                "pinyin": "mén",
+                "english": "door"
+            },
+            {
+                "chinese": "题",
+                "pinyin": "tí",
+                "english": "topic"
+            },
+            {
+                "chinese": "课",
+                "pinyin": "kè",
+                "english": "lesson"
+            },
+            {
+                "chinese": "姓",
+                "pinyin": "xìng",
+                "english": "surname"
+            },
+            {
+                "chinese": "问题",
+                "pinyin": "wèntí",
+                "english": "question"
+            },
+            {
+                "chinese": "事情",
+                "pinyin": "shìqing",
+                "english": "matter"
+            },
+            {
+                "chinese": "考试",
+                "pinyin": "kǎoshì",
+                "english": "exam"
+            },
+            {
+                "chinese": "票",
+                "pinyin": "piào",
+                "english": "ticket"
+            },
+            {
+                "chinese": "意思",
+                "pinyin": "yìsi",
+                "english": "meaning"
+            },
+            {
+                "chinese": "颜色",
+                "pinyin": "yánsè",
+                "english": "color"
+            }
+        ]
+    },
+    {
+        "type" : "Verb",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    },
+    {
+        "type" : "Adjective",
+        "items": [
+            {
+                "chinese": "",
+                "pinyin": "",
+                "english": ""
+            }
+        ]
+    }
+]
