@@ -7,6 +7,7 @@ import { cardGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
 import level2 from './jsontextfiles/level2.json';
 
+//TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
   const [level, setLevel] = useState(1);
   const levels = [level1, level2];
