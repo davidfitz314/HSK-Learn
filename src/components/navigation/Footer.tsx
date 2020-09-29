@@ -14,8 +14,14 @@ const useStyles = makeStyles((theme) => ({
     description: {
         marginTop: '16px',
         textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+    descriptionBold: {
+        marginTop: '16px',
+        textAlign: 'center',
         fontStyle: 'italic',
         color: theme.palette.text.secondary,
+        fontWeight: 'bold',
     },
 }));
 
@@ -23,7 +29,7 @@ export const Footer = () => {
     const classes = useStyles();
     return (
         <div className={classes.footer}>
-            <div className={classes.description}>© David Chen-Fitz 2020</div>
+            <div className={classes.descriptionBold}><span className={classes.description}>COPYRIGHT ©</span> 2020 David Chen-Fitzgerald</div>
         </div>
     );
 }
