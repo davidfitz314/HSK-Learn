@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import { CardDisplay } from './CardDisplay';
 import { languageGroups, cardGroups } from './Utils/Types';
 import IconButton from '@material-ui/core/IconButton';
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {
@@ -65,6 +66,9 @@ export const BodyWrapper = ({ level, allCardWords, currentLevel, children}: body
             {children}
             <IconButton id="iconButton"  color="inherit" onClick={()=>setEnglish(!english)} style={{ height: '32px', width: '32px', position: 'fixed', bottom: '12px', right: '32px', border: ' 1.5px solid #006400' }} aria-label="forward">
                 <p style={{ fontSize: 'medium', color: '#006400' }}>{english ? 'EN' : 'CN'}</p>
+            </IconButton>
+            <IconButton id="iconButton"  color="inherit" onClick={()=>{}} style={{ height: '32px', width: '32px', position: 'fixed', bottom: '12px', right: '82px', border: ' 1.5px solid #006400' }} aria-label="forward">
+                <SportsEsportsIcon></SportsEsportsIcon>
             </IconButton>
         </div>
     )
