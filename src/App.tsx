@@ -6,6 +6,7 @@ import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import { cardGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
 import level2 from './jsontextfiles/level2.json';
+import { CardApiMediator } from './Mediators/CardApiMediator';
 
 //TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
@@ -13,6 +14,8 @@ function App() {
   const levels = [level1, level2];
   const allCardWords: languageGroups[] = [];
   const [currentCardLevel, setCurrentCardLevel] = useState<cardGroups[]>();
+  const cardMed = new CardApiMediator();
+  console.log(cardMed);
   useEffect(() => {
     if (level <= 2) {
       setCurrentCardLevel(levels[level-1]);
