@@ -6,7 +6,8 @@ import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import { cardGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
 import level2 from './jsontextfiles/level2.json';
-import { CardApiMediator } from './Mediators/CardApiMediator';
+import { MockCardApi } from './Apis/MockCardApi';
+import { CategoryEnum } from './Utils/Types';
 
 //TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
@@ -14,8 +15,11 @@ function App() {
   const levels = [level1, level2];
   const allCardWords: languageGroups[] = [];
   const [currentCardLevel, setCurrentCardLevel] = useState<cardGroups[]>();
-  const cardMed = new CardApiMediator();
-  console.log(cardMed);
+  const cardMed = new MockCardApi();
+  console.log("all",cardMed.getAllCards());
+  console.log("by level",cardMed.getCardsByLevel(1));
+  console.log("by category",cardMed.getCardsByCategory(CategoryEnum.NOUN));
+  console.log("by level and category",cardMed.getCardsByCategoryForLevel(CategoryEnum.VERB, 2));
   useEffect(() => {
     if (level <= 2) {
       setCurrentCardLevel(levels[level-1]);

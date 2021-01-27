@@ -1,12 +1,10 @@
-import { CardGroups, DefaultLanguageEnum, LanguageGroups } from '../Utils/Types';
+import { CardType, CategoryEnum } from '../Utils/Types';
 
 interface CardApi {
-    getCardsGroupsByLevel: (level: number) => Promise<CardGroups[]>;
-    getAllUniqueCardsForCurrentLevel: () => Promise<LanguageGroups[]>;
-    setCurrentLevel: (level: number) => Promise<boolean>;
-    getCurrentLevel: () => Promise<number>;
-    setDefaultLanguage: (val: DefaultLanguageEnum) => Promise<boolean>;
-    getDefaultLanguage: () => Promise<DefaultLanguageEnum>;
+    getAllCards: () => Promise<CardType[]>;
+    getCardsByLevel: (level: number) => Promise<CardType[]>;
+    getCardsByCategory: (category: CategoryEnum) => Promise<CardType[]>;
+    getCardsByCategoryForLevel: (category: CategoryEnum, level: number) => Promise<CardType[]>;
 }
 
 export default CardApi;
