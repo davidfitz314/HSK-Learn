@@ -1,6 +1,5 @@
 import React,  { useState, useEffect } from 'react';
 import { NavBar } from './components/navigation/NavBar';
-import { Footer } from './components/navigation/Footer';
 import { BodyWrapper } from './components/flashCardsSimple/BodyWrapper';
 import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import { cardGroups } from './components/flashCardsSimple/Utils/Types';
@@ -8,6 +7,9 @@ import level1 from './jsontextfiles/level1.json';
 import level2 from './jsontextfiles/level2.json';
 import { MockCardApi } from './Apis/MockCardApi';
 import { CategoryEnum } from './Utils/Types';
+import Header from './modules/navbar/components/Header';
+import Footer from './modules/footer/components/Footer';
+import CardsBody from './modules/cards/components/CardsBody';
 
 //TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
@@ -34,7 +36,9 @@ function App() {
     
   return (
     <div id="wrapper">
+      <Header />
       <NavBar id="header" setPage={setLevel} />
+      <CardsBody />
       {currentCardLevel && (<BodyWrapper currentLevel={level} allCardWords={allCardWords} level={currentCardLevel} />)}
       <Footer />
     </div>
