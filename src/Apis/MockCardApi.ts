@@ -1,11 +1,10 @@
-import ICardApi from '../Apis/ICardApi';
+import { ICardsApi } from './ICardApi';
 import { CategoryEnum, CardType } from '../Utils/Types';
 import level1 from '../jsontextfiles/level1.json';
 import level2 from '../jsontextfiles/level2.json';
-import { resolve } from 'dns';
 
-export class MockCardApi implements ICardApi {
-    private allCardsArray: CardType[] = []
+export class MockCardApi implements ICardsApi {
+    allCardsArray: CardType[] = []
 
     constructor(){
         level1.forEach(group => group.items.forEach(card => {

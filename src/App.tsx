@@ -10,6 +10,9 @@ import { CategoryEnum } from './Utils/Types';
 import Header from './modules/navbar/components/Header';
 import Footer from './modules/footer/components/Footer';
 import CardsBody from './modules/cards/components/CardsBody';
+import CardsApiProvider from './Providers/CardsApiProvider';
+import CardsMediatorProvider from './Providers/CardsMediatorProvider';
+
 
 //TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
@@ -36,9 +39,13 @@ function App() {
     
   return (
     <div id="wrapper">
-      <Header />
+      <CardsApiProvider>
+        <CardsMediatorProvider>
+          <Header />
+          <CardsBody />
+        </CardsMediatorProvider>
+      </CardsApiProvider>
       <NavBar id="header" setPage={setLevel} />
-      <CardsBody />
       {currentCardLevel && (<BodyWrapper currentLevel={level} allCardWords={allCardWords} level={currentCardLevel} />)}
       <Footer />
     </div>
