@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { useCardsApi } from './CardsApiProvider';
-import makeContextHook from '../hooks/MakeContextHook';
+import makeContextHook from '../Utils/hooks/MakeContextHook';
 import { CardsMediator } from '../Mediators/CardsMediator';
 
 const mediatorContext = createContext<CardsMediator | undefined>(undefined);

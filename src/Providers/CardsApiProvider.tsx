@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { ICardsApi } from '../Apis/ICardApi';
 import { MockCardApi } from '../Apis/MockCardApi';
-import makeContextHook from '../hooks/MakeContextHook';
+import makeContextHook from '../Utils/hooks/MakeContextHook';
 
 const apiContext = createContext<ICardsApi | undefined>(undefined);
 
