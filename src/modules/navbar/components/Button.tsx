@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { Button as MuiButton } from '@material-ui/core';
+import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
 
 const useStyles = makeStyles((theme) => ({
     navBar: {
@@ -40,8 +41,9 @@ interface INavButtonProps {
 
 const Button: React.FC<INavButtonProps> = ({level}) => {
     const classes = useStyles();
+    const cardsMediator = useCardsMediator();
     return (
-        <MuiButton className={classes.paper}>{`Level ${level}`}</MuiButton>
+        <MuiButton className={classes.paper} onClick={() => cardsMediator.setLevel(level)}>{`Level ${level}`}</MuiButton>
     );
 };
 

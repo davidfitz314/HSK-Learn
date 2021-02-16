@@ -20,11 +20,6 @@ function App() {
   const levels = [level1, level2];
   const allCardWords: languageGroups[] = [];
   const [currentCardLevel, setCurrentCardLevel] = useState<cardGroups[]>();
-  const cardMed = new MockCardApi();
-  console.log("all",cardMed.getAllCards());
-  console.log("by level",cardMed.getCardsByLevel(1));
-  console.log("by category",cardMed.getCardsByCategory(CategoryEnum.NOUN));
-  console.log("by level and category",cardMed.getCardsByCategoryForLevel(CategoryEnum.VERB, 2));
   useEffect(() => {
     if (level <= 2) {
       setCurrentCardLevel(levels[level-1]);

@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Button from './Button';
+import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
 
 const useStyles = makeStyles((theme) => ({
     navBar: {
@@ -18,12 +19,14 @@ const useStyles = makeStyles((theme) => ({
 
 const ButtonBar = () => {
     const classes = useStyles();
-    const levels = [1,2,3,4,5,6];
+    const cardsMediator = useCardsMediator();
+    const levels = cardsMediator.cardLevels.getValue();
+
     return (
         <div className={classes.navBar}>
             <hr className={classes.line} />
                 <Grid container className={classes.navBar} justify='center'>
-                    {levels.map((level, key) => { 
+                    {levels && levels.map((level, key) => { 
                         return (
                             <Grid item xs={2} key={`nav-${key}`}>
                                 <Button level={level} />
