@@ -5,7 +5,6 @@ import { useValue } from '../../../Utils/hooks/useValue';
 const LevelDisplay: React.FC = () => {
     const mediator = useCardsMediator();
     const level = useValue(mediator.currentLevel);
-    console.log('veeeee', level);
     return (
         <>{level && (<h3>HSK Level {level}</h3>)}</>
     )
