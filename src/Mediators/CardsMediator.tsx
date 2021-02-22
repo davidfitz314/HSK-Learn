@@ -70,7 +70,16 @@ export class CardsMediator {
         this.currentLevel.setValue(level);
     }
 
-    // Reset all state/context data
+    reset(){
+        this.allCards.setValue(null);
+        this.currentLevelCards.setValue(null);
+        this.getAllCards();
+        this.currentLevel.setValue(1);
+        const tempLevels = [1,2,3,4,5,6];
+        this.cardLevels.setValue(tempLevels);
+    }
+
+    // removes all state/context data
     dispose(){
         this.allCards.dispose();
         this.currentLevelCards.dispose();
