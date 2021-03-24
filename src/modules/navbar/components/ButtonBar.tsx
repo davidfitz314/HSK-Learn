@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Button from './Button';
 import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
+import { useValue } from '../../../Utils/hooks/useValue';
 
 const useStyles = makeStyles((theme) => ({
     navBar: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 const ButtonBar = () => {
     const classes = useStyles();
     const cardsMediator = useCardsMediator();
-    const levels = cardsMediator.cardLevels.getValue();
+    const levels = useValue(cardsMediator.cardLevels);
 
     return (
         <div className={classes.navBar}>

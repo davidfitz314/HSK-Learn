@@ -2,7 +2,8 @@ import React from 'react';
 import Categories from './Categories';
 import LevelDisplay from './LevelDisplay';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
+import { useValue } from '../../../Utils/hooks/useValue';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {
@@ -22,10 +23,15 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const CardsBody = () => {
     const classes = useStyles();
+    const mediator = useCardsMediator();
+    const selectedCategory = useValue(mediator.selectedCategory);
+    const currentCards = useValue(mediator.cardsByCategory);
+    console.log('cat cards', currentCards);
     return (
         <div className={classes.bodyWrapper}>
             <LevelDisplay />
             <Categories />
+            {selectedCategory && (<p>I'm free {selectedCategory}</p>)}
         </div>
     )
 }

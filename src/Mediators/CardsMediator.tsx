@@ -4,17 +4,20 @@ import { CardType } from '../Utils/Types';
 
 export class CardsMediator {
     api: ICardsApi;
-    private allCards = new ObservableValue<CardType[] | null>(null);
+    private allCards = new ObservableValue<CardType[]>([]);
     readonly currentLevelCards = new ObservableValue<CardType[] | null>(null);
     readonly cardLevels = new ObservableValue<number[] | null>(null);
     currentLevel = new ObservableValue<number | null>(null);
+    readonly categories = new ObservableValue<string[]>([]);
+    selectedCategory = new ObservableValue<string | undefined>(undefined);
+    cardsByCategory = new ObservableValue<CardType[]>([]);
 
     constructor(api: ICardsApi){
         this.api = api;
         this.getAllCards();
-        this.currentLevel.setValue(1);
         const tempLevels = [1,2,3,4,5,6];
         this.cardLevels.setValue(tempLevels);
+        this.setLevel(1);
     }
 
     getAllCards = () =>{
@@ -64,19 +67,51 @@ export class CardsMediator {
         return this.cardLevels.getValue();
     }
 
-    setLevel(level: number){
-        console.log('vel in', level);
+    setLevel = async (level: number) => {
         //TODO: write checks for level range
         this.currentLevel.setValue(level);
+        await this.getCardsForLevel();
+        this.selectedCategory.setValue(undefined);
+        this.cardsByCategory.setValue([]);
+    }
+
+    getCardCategories(){
+        const allCategories = this.allCards.getValue().map(card => card.category);
+        return this.categories.setValue(this.removeDuplicates(allCategories));
+    }
+
+    private removeDuplicates(myArray: string[]){
+        const noDuplicates: string[] = [];
+        myArray.forEach(item => {
+            const found = noDuplicates.find(each => each.includes(item))
+            if (!found) noDuplicates.push(item);
+        });
+        return noDuplicates;
+    }
+
+    setSelectedCategory = async (category: string) => {
+        await this.selectedCategory.setValue(category);
+        await this.setCardsByCategory();
+    }
+
+    setCardsByCategory(){
+        const category = this.selectedCategory.getValue();
+        const levelCards = this.currentLevelCards.getValue();
+        if (category && levelCards){
+            this.cardsByCategory.setValue(levelCards.filter(card => card.category.includes(category)));
+        }
     }
 
     reset(){
-        this.allCards.setValue(null);
+        this.allCards.setValue([]);
         this.currentLevelCards.setValue(null);
         this.getAllCards();
         this.currentLevel.setValue(1);
         const tempLevels = [1,2,3,4,5,6];
         this.cardLevels.setValue(tempLevels);
+        this.categories.setValue([]);
+        this.selectedCategory.setValue(undefined);
+        this.cardsByCategory.setValue([]);
     }
 
     // removes all state/context data
@@ -85,5 +120,8 @@ export class CardsMediator {
         this.currentLevelCards.dispose();
         this.currentLevel.dispose();
         this.cardLevels.dispose();
+        this.categories.dispose();
+        this.selectedCategory.dispose();
+        this.cardsByCategory.dispose();
     }
 }
