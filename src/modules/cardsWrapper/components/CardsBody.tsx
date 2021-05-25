@@ -4,6 +4,7 @@ import LevelDisplay from './LevelDisplay';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
 import { useValue } from '../../../Utils/hooks/useValue';
+import CardsDialog from '../../../modules/cards/components/CardsDialog';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {
@@ -31,7 +32,7 @@ const CardsBody = () => {
         <div className={classes.bodyWrapper}>
             <LevelDisplay />
             <Categories />
-            {selectedCategory && (<p>I'm free {selectedCategory}</p>)}
+            <CardsDialog />
         </div>
     )
 }

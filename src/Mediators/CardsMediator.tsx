@@ -97,7 +97,15 @@ export class CardsMediator {
     setCardsByCategory(){
         const category = this.selectedCategory.getValue();
         const levelCards = this.currentLevelCards.getValue();
-        if (category && levelCards){
+        if (!levelCards || !category) {
+            this.cardsByCategory.setValue([]);
+            return;
+        }
+        if (category.toLowerCase().includes("all")){
+            this.cardsByCategory.setValue(levelCards);
+            return;
+        } else {
+            // TODO: Add an error in case no cards were found in specified category?
             this.cardsByCategory.setValue(levelCards.filter(card => card.category.includes(category)));
         }
     }
@@ -114,7 +122,7 @@ export class CardsMediator {
         this.cardsByCategory.setValue([]);
     }
 
-    // removes all state/context data
+    // Disposes of mediators in case of unmounting the component
     dispose(){
         this.allCards.dispose();
         this.currentLevelCards.dispose();
