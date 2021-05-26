@@ -18,7 +18,11 @@ interface CategoryButtonProps {
 
 const CategoryButton = ({ name, openCategory }: CategoryButtonProps) => {
     const classes = useStyles();
-    return (<Button className={classes.button} onClick={() => openCategory(name)}>{name}</Button>);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        event.currentTarget.blur();
+        openCategory(name);
+    }
+    return (<Button className={classes.button} onClick={handleClick}>{name}</Button>);
 };
 
 export default CategoryButton;

@@ -3,7 +3,6 @@ import Categories from './Categories';
 import LevelDisplay from './LevelDisplay';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
-import { useValue } from '../../../Utils/hooks/useValue';
 import CardsDialog from '../../../modules/cards/components/CardsDialog';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -25,9 +24,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const CardsBody = () => {
     const classes = useStyles();
     const mediator = useCardsMediator();
-    const selectedCategory = useValue(mediator.selectedCategory);
-    const currentCards = useValue(mediator.cardsByCategory);
-    console.log('cat cards', currentCards);
+    
     return (
         <div className={classes.bodyWrapper}>
             <LevelDisplay />
