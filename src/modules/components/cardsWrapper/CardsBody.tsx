@@ -3,7 +3,7 @@ import Categories from './Categories';
 import LevelDisplay from './LevelDisplay';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
-import CardsDialog from '../../../modules/cards/components/CardsDialog';
+import CardsDialog from '../cards/CardsDialog';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
     button: {

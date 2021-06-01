@@ -5,9 +5,9 @@ import { languageGroups } from './components/flashCardsSimple/Utils/Types';
 import { cardGroups } from './components/flashCardsSimple/Utils/Types';
 import level1 from './jsontextfiles/level1.json';
 import level2 from './jsontextfiles/level2.json';
-import Header from './modules/navbar/components/Header';
-import Footer from './modules/footer/components/Footer';
-import CardsBody from './modules/cardsWrapper/components/CardsBody';
+import Header from './modules/components/navbar/Header';
+import Footer from './modules/components/footer/Footer';
+import CardsBody from './modules/components/cardsWrapper/CardsBody';
 import CardsApiProvider from './Providers/CardsApiProvider';
 import CardsMediatorProvider from './Providers/CardsMediatorProvider';
 
