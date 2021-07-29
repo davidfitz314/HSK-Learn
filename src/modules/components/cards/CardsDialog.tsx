@@ -6,6 +6,7 @@ import CloseDialogButton from './CloseDialogButton';
 import { createUseStyles } from 'react-jss';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
+import Card from '../card/card';
 
 const useStyles = createUseStyles(
     {
@@ -15,11 +16,11 @@ const useStyles = createUseStyles(
             position: 'absolute',
         },
         appBar: {
-            display: 'grid',
+            display: 'grid !important',
             width: '100%',
             position: 'fixed',
-            gridTemplateColumns: '1fr 1fr 1fr',
-            backgroundColor: '#00a500',
+            gridTemplateColumns: '1fr 1fr 1fr !important',
+            backgroundColor: '#00a500 !important',
             color: '#d3E145',
             textColor: '#d3E145',
         },
@@ -30,6 +31,9 @@ const useStyles = createUseStyles(
         pagesController: {
             textAlign: 'right',
             padding: '12px 12px 0 0',
+        },
+        topMarginWrapper: {
+            marginTop: '68px !important',
         },
     },
     {
@@ -52,7 +56,9 @@ const CardsDialog = () => {
                 <div className={classes.title}><Typography variant="h6">Category: <strong>{categoryName}</strong></Typography></div>
                 <div className={classes.pagesController}>Test</div>
             </AppBar>
-            {availableCards.map((card, key) => <p key={`${card.word.english}-${key}`}><span>{card.word.english}***</span><span>{card.word.chinese}***</span><span>{card.word.pinyin}</span></p>)}
+            <div className={classes.topMarginWrapper}>
+                {availableCards.map((card, key) => <Card cardType={card} key={key} />)}
+            </div>
         </Dialog>
     )
 }

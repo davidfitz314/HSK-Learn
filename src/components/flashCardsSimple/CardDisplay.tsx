@@ -34,6 +34,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
         textColor: '#d3E145',
         textAlign: 'center',
     },
+    gridAlign: {
+        justifyContent: 'space-around',
+    },
 }));
 
 type cardProps = {
@@ -79,7 +82,7 @@ export const CardDisplay = ({ cardObj, open, handleClose, selected, setSelected,
         <div>
             <Dialog fullScreen open={open} onClose={handleClose}>
                 <AppBar className={classes.appBar}>
-                    <Grid container  alignItems='center' justify='space-around' direction="row">
+                    <Grid container  alignItems='center' className={classes.gridAlign} direction="row">
                         <Grid item xs style={{ paddingLeft: '16px' }}>
                             <IconButton color="inherit" onClick={handleClose} aria-label="back">
                                 <CloseOutlined aria-label='back' />

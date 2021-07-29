@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '5px',
         padding: '0 5px',
         textAlign: 'center',
+        justifyContent: 'center',
     },
     line: {
         border: '1px solid #aeb301',
@@ -26,7 +27,7 @@ const ButtonBar = () => {
     return (
         <div className={classes.navBar}>
             <hr className={classes.line} />
-                <Grid container className={classes.navBar} justify='center'>
+                <Grid container className={classes.navBar}>
                     {levels && levels.map((level, key) => { 
                         return (
                             <Grid item xs={2} key={`nav-${key}`}>

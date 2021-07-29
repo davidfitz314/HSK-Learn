@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
     gridSpacing: {
         margin: theme.spacing(2),
     },
+    gridAlign: {
+        justifyContent: 'center',
+    }
 }));
 
 type cardPageNavProps = {
@@ -64,7 +67,7 @@ export const CardPageNavigation = ({items, cardsPerPage, page, setPage, english,
     
     return (
         <div className={classes.content}>
-        <Grid container alignItems='center' justify='center' style={{ color: '#d3E145' }}>
+        <Grid container alignItems='center' className={classes.gridAlign} style={{ color: '#d3E145' }}>
             {cardsArray[page] && cardsArray[page].map((item, key) => {
             return (
                     <Grid key={key} item xs={2} className={classes.gridSpacing}>
@@ -73,7 +76,7 @@ export const CardPageNavigation = ({items, cardsPerPage, page, setPage, english,
                 );
             })}
         </Grid>
-        <Grid container alignItems='center' justify='center' style={{ position: 'fixed', bottom: 0,
+        <Grid container alignItems='center' className={classes.gridAlign} style={{ position: 'fixed', bottom: 0,
   right: 0 }}>
             <Grid item xs style={{ textAlign: 'right', marginLeft: '32px', color: '#006400' }}>
                 <IconButton color="inherit" onClick={()=>{prevPage()}} aria-label="back">

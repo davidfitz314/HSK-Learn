@@ -1,4 +1,4 @@
-import React,  { useState, useEffect } from 'react';
+import React,  { useState, useMemo } from 'react';
 import { NavBar } from './components/navigation/NavBar';
 import { BodyWrapper } from './components/flashCardsSimple/BodyWrapper';
 import { languageGroups } from './components/flashCardsSimple/Utils/Types';
@@ -15,20 +15,18 @@ import CardsMediatorProvider from './Providers/CardsMediatorProvider';
 //TODO: since card levels are built on top of eachother maybe add a way to remove previous level cards
 function App() {
   const [level, setLevel] = useState(1);
-  const levels = [level1, level2];
-  const allCardWords: languageGroups[] = [];
-  const [currentCardLevel, setCurrentCardLevel] = useState<cardGroups[]>();
-  useEffect(() => {
+  const levels = useMemo(() => [level1, level2], []);
+  const allCardWords: languageGroups[] = useMemo(() => [], []);
+  const currentCardLevel: cardGroups[] = useMemo(() => {
     if (level <= 2) {
-      setCurrentCardLevel(levels[level-1]);
       levels[level - 1].forEach(group => group.items.map(each => allCardWords.push(each)));
+      return levels[level-1];
     }
     else {
-      setCurrentCardLevel(levels[0]);
       levels[0].forEach(group => group.items.map(each => allCardWords.push(each)));
+      return levels[0];
     }
-  }, [level, allCardWords, levels])
-  
+  }, [level, allCardWords, levels]);
     
   return (
     <div id="wrapper">

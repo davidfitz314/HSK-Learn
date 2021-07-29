@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '5px',
         padding: '0 5px',
         textAlign: 'center',
+        justifyContent: 'center',
     },
     paper: {
         padding: `${theme.spacing(1)}px ${theme.spacing(8)}px `,
@@ -48,7 +49,7 @@ export const NavBar = (props: NavBarProps) => {
             <div className={classes.description}>Get yourself ready for your HSK Exam by practicing with flashcards.</div>
             <div className={classes.navBar}>
                 <hr className={classes.line} />
-                <Grid container className={classes.navBar} justify='center'>
+                <Grid container className={classes.navBar}>
                     <Grid item xs={2}>
                         <Button className={classes.paper} onClick={() => props.setPage(1)}>Level 1</Button>
                     </Grid>

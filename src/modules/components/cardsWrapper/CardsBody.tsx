@@ -2,7 +2,7 @@ import React from 'react';
 import Categories from './Categories';
 import LevelDisplay from './LevelDisplay';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
+// import { useCardsMediator } from '../../../Providers/CardsMediatorProvider';
 import CardsDialog from '../cards/CardsDialog';
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 
 const CardsBody = () => {
     const classes = useStyles();
-    const mediator = useCardsMediator();
+    // const mediator = useCardsMediator();
     
     return (
         <div className={classes.bodyWrapper}>
