@@ -21,6 +21,5 @@ import { ObservableValue } from '../mediator/ObservableValue';
 
      useEffect(() => () => subscription.unsubscribe(), [subscription]);
 
-     
      return observableValue.getValue();
  }
